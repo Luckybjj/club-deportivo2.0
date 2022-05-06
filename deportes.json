@@ -1,7 +1,1 @@
-{
-  "deportes": [
-    { "nombre": "Kick Boxing", "precio": "30000" },
-    { "nombre": "Jiu Jitsu", "precio": "40000" },
-    { "nombre": "Karate", "precio": "15000" }
-  ]
-}
+{"deportes":[{"nombre":"Kick Boxing","precio":"30000"},{"nombre":"Jiu Jitsu","precio":"40000"},{"nombre":"Karate","precio":"15000"},{"nombre":"MMA","precio":"45000"}]}

@@ -15,16 +15,18 @@ const server = http
         res.end(data);
       });
     }
-    //1. Crear una ruta que reciba el nombre y precio de un nuevo deporte, lo persista en un archivo JSON.
+    // 1. Crear una ruta que al consultarse devuelva en formato JSON todos los deportes registrados.
     if (req.url == "/deportes") {
       fs.readFile("deportes.json", "utf8", (err, data) => {
         res.end(data);
       });
     }
-    // 2. Crear una ruta que al consultarse devuelva en formato JSON todos los deportes registrados.
+    // 2. Ruta POST que recibe el nombre y precio de un nuevo deporte, lo persiste en un archivo JSON. Se genera una respuesta en caso de no recibir ambos valores en la consulta.
     if (req.url.startsWith("/agregar")) {
       const { nombre, precio } = url.parse(req.url, true).query;
       fs.readFile("deportes.json", "utf8", (err, data) => {
+        if (nombre === "" || precio === "")
+          return res.end("Debes indicar nombre y precio.");
         let deportes = JSON.parse(data).deportes;
         deportes.push({
           nombre,
