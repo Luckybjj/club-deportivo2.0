@@ -1,0 +1,6 @@
+npm i mocha chai --save
+npm install uuid
+npm install chai
+npm i chai-http
+
+correr el test: npm run test
